@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yumna El Hendi | Portfolio</title>
+  <style>
+    :root {
+      --primary: #6c57c8;
+      --primary-dark: #4d389f;
+      --primary-soft: #ede8fb;
+      --accent: #f6f3ff;
+      --text: #2d2d32;
+      --muted: #626273;
+      --white: #ffffff;
+      --border: rgba(108, 87, 200, 0.14);
+      --shadow: 0 18px 45px rgba(35, 23, 84, 0.12);
+      --radius-lg: 26px;
+      --radius-md: 20px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background:
+        linear-gradient(rgba(250, 250, 252, 0.92), rgba(250, 250, 252, 0.94)),
+        url("bg.jpg") center/cover no-repeat fixed;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      max-width: 740px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 74px;
+      height: 4px;
+      margin-top: 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), #b9acef);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(108, 87, 200, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary-dark);
+      border-color: #d9d0f7;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.94rem;
+      letter-spacing: 0.2px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(108, 87, 200, 0.08);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags span {
+      background: var(--primary);
+      color: var(--white);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -1.3px;
+      margin-bottom: 18px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .hero-text p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 680px;
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 28px 0 22px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+   .hero-card {
+  overflow: hidden;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(108, 87, 200, 0.14);
+  box-shadow: 0 18px 45px rgba(35, 23, 84, 0.12);
+}
+
+.hero-card-top {
+  height: 150px;
+  background: linear-gradient(135deg, #a78fe4, #8b72d7);
+  position: relative;
+}
+
+.hero-card-top::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  top: 16px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-photo-frame {
+  width: 230px;
+  height: 230px;
+  margin: -55px auto 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 7px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-card-body {
+  padding: 0 32px 34px;
+  text-align: center;
+}
+
+.hero-card-body h2 {
+  color: #4d389f;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.hero-card-body p {
+  color: #626273;
+  margin-bottom: 12px;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 700px) {
+  .hero-card-top {
+    height: 140px;
+  }
+
+  .hero-photo-frame {
+    width: 190px;
+    height: 190px;
+    margin: -45px auto 16px;
+  }
+
+  .hero-card-body {
+    padding: 0 20px 26px;
+  }
+
+  .hero-card-body h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-card-body p {
+    font-size: 0.98rem;
+  }
+}
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: linear-gradient(135deg, #735fd1, #9785df);
+      border-radius: 20px;
+      padding: 22px;
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(85, 63, 176, 0.18);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.38rem;
+      margin-bottom: 7px;
+    }
+
+    .stat span {
+      color: #f3efff;
+      font-size: 0.96rem;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 54px rgba(35, 23, 84, 0.16);
+    }
+
+    .project-image-wrap {
+      background: linear-gradient(135deg, #f5f1ff, #efeafd);
+      padding: 16px;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 320px;
+      object-fit: contain;
+      object-position: center;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 8px;
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.02);
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.28rem;
+      color: var(--text);
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+
+    .project-link {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .experience-item {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .experience-item h3 {
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      font-size: 1.06rem;
+    }
+
+    .experience-item p,
+    .contact-card p,
+    .contact-card li {
+      color: var(--muted);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      list-style: none;
+    }
+
+    .contact-list a {
+      color: var(--primary-dark);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+    }
+
+    .footer-box {
+      background: linear-gradient(180deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 10, 24, 0.84);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      z-index: 9999;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: min(92vw, 1100px);
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 10px;
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.35);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+      line-height: 1;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card-top {
+        min-height: 120px;
+      }
+
+      .hero-photo-frame {
+        width: 190px;
+        height: 190px;
+      }
+
+      .hero-photo {
+        transform: translateY(18px) scale(1.08);
+      }
+
+      .hero-card-body,
+      .card,
+      .project-content {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .project-image {
+        height: 270px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">Yumna El Hendi</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Background</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="hero-tags">
+            <span>Graphic Design</span>
+            <span>Branding</span>
+            <span>UX/UI</span>
+            <span>Digital Media</span>
+          </div>
+          <h1>Multidisciplinary designer building thoughtful visual experiences.</h1>
+          <p>
+            I’m Yumna El Hendi, a multidisciplinary designer with a passion for crafting
+            story-driven visual experiences. My work focuses on branding, UX/UI design,
+            and digital media, where creativity and strategy come together to create meaningful design solutions.
+          </p>
+          <p>
+            I strive to build clean, modern designs that communicate ideas clearly and create lasting connections with audiences.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+            <a href="https://www.linkedin.com/in/yumna-el-hendi-6a2494129?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app/" class="btn btn-secondary" target="_blank">LinkedIn</a>
+          </div>
+          <div class="hero-meta">
+            <span class="pill">Humber Polytechnic</span>
+            <span class="pill">Algonquin College</span>
+            <span class="pill">Ottawa, Ontario</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+  <div class="hero-card-top"></div>
+
+  <div class="hero-photo-frame">
+    <img src="images/profile.jpg" alt="Portrait of Yumna El Hendi" class="hero-photo">
+  </div>
+
+  <div class="hero-card-body">
+    <h2>Yumna El Hendi</h2>
+    <p>Designer focused on visual storytelling, branding, and digital experiences.</p>
+    <p>Available for portfolio, internship, and creative opportunities.</p>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+          <p>A clearer and more current introduction that sounds like me.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="card about-copy">
+            <p>
+              I’m a dedicated designer with a passion for crafting captivating, story-driven designs that leave a lasting impact.
+              I love creating work that feels intentional, polished, and emotionally engaging.
+            </p>
+            <p>
+              My background across graphic design, UX/UI, branding, content creation, and digital media has helped me build a strong eye for layout,
+              typography, visual storytelling, and audience connection.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <strong>Branding</strong>
+                <span>Identity systems, layouts, and visual consistency.</span>
+              </div>
+              <div class="stat">
+                <strong>UX/UI</strong>
+                <span>Designing digital experiences with structure and clarity.</span>
+              </div>
+              <div class="stat">
+                <strong>Graphic Design</strong>
+                <span>Print, campaign, social, and editorial-style visual work.</span>
+              </div>
+              <div class="stat">
+                <strong>Creative Media</strong>
+                <span>Combining storytelling, visuals, and presentation impact.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="section-title" style="margin-bottom: 20px;">
+              <h2 style="font-size: 1.7rem;">Skills</h2>
+            </div>
+            <div class="skills-wrap">
+              <span class="pill">UX/UI Design</span>
+              <span class="pill">Graphic Design</span>
+              <span class="pill">Brand Development</span>
+              <span class="pill">Front-End Development</span>
+              <span class="pill">Video Editing</span>
+              <span class="pill">Photography</span>
+              <span class="pill">Content Creation</span>
+              <span class="pill">Adobe Creative Suite</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Projects</h2>
+          <p>Hover a project image to preview it larger. Use the X button to close it, or move out of the preview area.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="images/lululemon-campaign.jpg" alt="Lululemon concept campaign" class="project-image" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Campaign Design</span>
+              <h3>Lululemon</h3>
+              <p>A concept-driven campaign project focused on visual direction, compositing, and polished marketing presentation.</p>
+              <a href="projects/lululemon.html" class="project-link">View full project →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="images/katmat.jpg" alt="KatMat Productions branding" class="project-image" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Brand Identity</span>
+              <h3>KatMat</h3>
+              <p>A branding and digital identity project focused on a modern visual system and stronger brand presence.</p>
+              <a href="projects/katmat.html" class="project-link">View full project →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="images/meditation-app.jpg" alt="Meditation app design" class="project-image" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">UX/UI</span>
+              <h3>Meditation App</h3>
+              <p>A calming app experience designed to support stress management through guidance, structure, and mindful interaction.</p>
+              <a href="projects/meditation-app.html" class="project-link">View full project →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="images/Field Dolly_Angled Side.990 230628.png" alt="Spidercam vector illustration" class="project-image" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Illustration</span>
+              <h3>Spidercam</h3>
+              <p>Technical vector illustrations created to present product form clearly from multiple professional viewpoints.</p>
+              <a href="projects/spidercam.html" class="project-link">View full project →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="images/videography-cover.jpg" alt="Videography project collection" class="project-image" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Videography</span>
+              <h3>Videography</h3>
+              <p>A collection of interview, storytelling, production, and sound design projects presented in one place.</p>
+              <a href="projects/videography.html" class="project-link">View video projects →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrap">
+              <img src="images/viral-trends.jpg" alt="How trends go viral infographic" class="project-image" />
+            </div>
+            <div class="project-content">
+              <span class="project-tag">Infographic</span>
+              <h3>Viral Trends</h3>
+              <p>An infographic project that turns research into a visually engaging story with strong hierarchy and clarity.</p>
+              <a href="projects/viral-trends.html" class="project-link">View full project →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Education & Background</h2>
+          <p>A more direct and current summary of my education and creative background.</p>
+        </div>
+
+        <div class="card">
+          <div class="experience-list">
+            <div class="experience-item">
+              <h3>Graphic Design Program — Humber Polytechnic</h3>
+              <p>Current studies focused on branding, visual communication, and professional design development.</p>
+            </div>
+            <div class="experience-item">
+              <h3>Interactive Media Design Diploma — Algonquin College</h3>
+              <p>Foundation in web design, UX/UI, creative production, and digital storytelling.</p>
+            </div>
+            <div class="experience-item">
+              <h3>Creative Focus</h3>
+              <p>Brand identity, campaign visuals, interface concepts, presentation design, content creation, and storytelling-driven media.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>A simple, professional contact section for my portfolio.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <h3 style="color: var(--primary-dark); margin-bottom: 14px;">Let’s Connect</h3>
+            <p>I’m open to design opportunities, collaborations, and portfolio conversations.</p>
+            <div class="contact-list">
+              <p><strong>Email:</strong> <a href="mailto:umna-elhendi@hotmail.com">umna-elhendi@hotmail.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+16139814977">+1 613-981-4977</a></p>
+              <p><strong>Location:</strong> Ottawa, Ontario, Canada</p>
+              <p><strong>Resume:</strong> <a href="resume.pdf" target="_blank">View Resume</a></p>
+              <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yumna-el-hendi-6a2494129?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apptps://www.linkedin.com/in/yumna-el-hendi/" target="_blank">linkedin.com/in/yumna-el-hendi</a></p>
+            </div>
+          </div>
+
+          <div class="card contact-card">
+            <h3 style="color: var(--primary-dark); margin-bottom: 14px;">Quick Links</h3>
+            <div class="contact-list">
+              <p><strong>Projects:</strong> <a href="#projects">View my featured work</a></p>
+              <p><strong>Resume:</strong> <a href="resume.pdf" target="_blank">Download PDF</a></p>
+              <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yumna-el-hendi-6a2494129?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Connect with me</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        <p>© 2026 Yumna El Hendi</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" id="lightboxInner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+      <img id="lightboxImg" src="" alt="Large project preview" />
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxInner = document.getElementById("lightboxInner");
+    const projectImages = document.querySelectorAll(".project-image");
+
+    let closeTimer = null;
+
+    function openLightbox(src) {
+      if (!src) return;
+      clearTimeout(closeTimer);
+      lightboxImg.src = src;
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox() {
+      clearTimeout(closeTimer);
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+    }
+
+    function scheduleClose() {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        closeLightbox();
+      }, 180);
+    }
+
+    function cancelClose() {
+      clearTimeout(closeTimer);
+    }
+
+    projectImages.forEach((img) => {
+      img.addEventListener("mouseenter", () => {
+        openLightbox(img.getAttribute("src"));
+      });
+
+      img.addEventListener("mouseleave", () => {
+        scheduleClose();
+      });
+
+      img.addEventListener("click", () => {
+        openLightbox(img.getAttribute("src"));
+      });
+    });
+
+    lightbox.addEventListener("mouseenter", cancelClose);
+    lightboxInner.addEventListener("mouseenter", cancelClose);
+    lightbox.addEventListener("mouseleave", scheduleClose);
+    lightboxInner.addEventListener("mouseleave", scheduleClose);
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

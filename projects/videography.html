@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videography Projects | Yumna El Hendi</title>
+  <style>
+    :root {
+      --primary: #6c57c8;
+      --primary-dark: #4d389f;
+      --primary-soft: #ede8fb;
+      --accent: #f6f3ff;
+      --text: #2d2d32;
+      --muted: #626273;
+      --white: #ffffff;
+      --border: rgba(108, 87, 200, 0.14);
+      --shadow: 0 18px 45px rgba(35, 23, 84, 0.12);
+      --radius-lg: 26px;
+      --radius-md: 20px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background:
+        linear-gradient(rgba(250, 250, 252, 0.94), rgba(250, 250, 252, 0.96)),
+        url("../bg.jpg") center/cover no-repeat fixed;
+    }
+
+    img, iframe {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(108, 87, 200, 0.08);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-dark);
+    }
+
+    .page-hero {
+      padding: 72px 0 36px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-top {
+      background: linear-gradient(135deg, #a58de3, #6c57c8);
+      color: var(--white);
+      padding: 24px 24px 26px;
+      position: relative;
+    }
+
+    .hero-top::after {
+      content: "";
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .eyebrow {
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      opacity: 0.96;
+      color: #f8f4ff;
+    }
+
+    .hero-top h1 {
+      font-size: clamp(2.1rem, 5vw, 3.3rem);
+      line-height: 1.05;
+      margin-bottom: 8px;
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .hero-top p {
+      color: #ffffff;
+      opacity: 0.96;
+      max-width: 760px;
+    }
+
+    .page-body {
+      padding: 24px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .meta-pill {
+      display: inline-block;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.78rem;
+      border: 1px solid var(--border);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .video-card {
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .video-frame {
+      background: linear-gradient(135deg, #f5f1ff, #efeafd);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 12px;
+      background: #000;
+    }
+
+    .video-info h2 {
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .video-info p {
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-size: 0.96rem;
+    }
+
+    .small-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+  .small-labels span {
+  background: #eef0ff; /* soft light purple */
+  color: #4d389f;
+  border: 1px solid rgba(108, 87, 200, 0.2);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.small-labels span:hover {
+  background: #6c57c8;
+  color: white;
+  transition: 0.2s ease;
+}
+    .info-boxes {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .info-box {
+  background: #f8f6ff;              /* very light soft purple */
+  color: #4d389f;                  /* your primary dark */
+  border: 1px solid rgba(108,87,200,0.15);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+    .section-note {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #a58de3, #6c57c8);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-note h3 {
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .section-note p {
+      color: #f8f4ff;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-dark);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: #3f2f87;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary-dark);
+      border: 2px solid #ddd3fb;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+    }
+
+    footer {
+      padding: 14px 0 44px;
+    }
+
+    .footer-box {
+      background: linear-gradient(180deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 900px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .page-hero {
+        padding-top: 46px;
+      }
+
+      .hero-top,
+      .page-body {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="../index.html" class="logo">Yumna El Hendi</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects" class="active">Projects</a></li>
+          <li><a href="../index.html#experience">Background</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-top">
+            <div class="eyebrow">Videography • Interviews • Storytelling • Sound Design</div>
+            <h1>Videography Projects</h1>
+            <p>
+              A collection of my video projects focused on interviews, awareness-driven storytelling,
+              location preparation, and sound design.
+            </p>
+          </div>
+
+          <div class="page-body">
+            <div class="meta-row">
+              <span class="meta-pill">Videography</span>
+              <span class="meta-pill">Interview Production</span>
+              <span class="meta-pill">Storytelling</span>
+              <span class="meta-pill">Sound Design</span>
+            </div>
+
+            <div class="project-list">
+
+              <article class="video-card">
+                <div class="video-grid">
+                  <div class="video-frame">
+                    <iframe
+                      src="https://www.youtube.com/embed/79l4bW7mr30"
+                      title="Women's Rights in Iran"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+
+                  <div class="video-info">
+                    <div class="small-labels">
+                      <span>Interview</span>
+                      <span>Awareness</span>
+                      <span>Documentary Style</span>
+                    </div>
+                    <h2>Women’s Rights in Iran</h2>
+                    <p>
+                      In this interview project, I explore the issue of women’s rights in Iran and the
+                      broader social context surrounding the conversation. The goal was to create a piece
+                      that informs, raises awareness, and gives space to meaningful dialogue.
+                    </p>
+
+                    <div class="info-boxes">
+                      <div class="info-box">Focus: social awareness and women’s rights</div>
+                      <div class="info-box">Format: interview-based storytelling</div>
+                      <div class="info-box">Role: concept, direction, and production</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="video-card">
+                <div class="video-grid">
+                  <div class="video-frame">
+                    <iframe
+                      src="https://www.youtube.com/embed/LqrLvZeHaoo"
+                      title="Dear Sister"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+
+                  <div class="video-info">
+                    <div class="small-labels">
+                      <span>Storytelling</span>
+                      <span>Women’s Voices</span>
+                      <span>Creative Direction</span>
+                    </div>
+                    <h2>Dear Sister</h2>
+                    <p>
+                      “Dear Sister” is a video project that brings together women’s voices and shared
+                      experiences through an intimate and reflective storytelling approach. The piece was
+                      designed to feel personal, emotionally resonant, and human-centered.
+                    </p>
+
+                    <div class="info-boxes">
+                      <div class="info-box">Focus: shared experiences and emotional storytelling</div>
+                      <div class="info-box">Style: reflective narrative and voice-driven content</div>
+                      <div class="info-box">Role: concept development and video production</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="video-card">
+                <div class="video-grid">
+                  <div class="video-frame">
+                    <iframe
+                      src="https://www.youtube.com/embed/7RtweMUIGH8"
+                      title="Interview Location Scout"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+
+                  <div class="video-info">
+                    <div class="small-labels">
+                      <span>Behind the Scenes</span>
+                      <span>Pre-Production</span>
+                      <span>Planning</span>
+                    </div>
+                    <h2>Interview Location Scout</h2>
+                    <p>
+                      This behind-the-scenes video documents my process for scouting and preparing a
+                      location for an interview. It highlights decisions around lighting, acoustics,
+                      framing, and setup to support a polished final production.
+                    </p>
+
+                    <div class="info-boxes">
+                      <div class="info-box">Focus: location planning and production setup</div>
+                      <div class="info-box">Style: behind-the-scenes documentation</div>
+                      <div class="info-box">Role: planning, setup, and production</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="video-card">
+                <div class="video-grid">
+                  <div class="video-frame">
+                    <iframe
+                      src="https://www.youtube.com/embed/rOkrX6QWSKI"
+                      title="Smoothie Foley Project"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+
+                  <div class="video-info">
+                    <div class="small-labels">
+                      <span>Foley</span>
+                      <span>Sound Design</span>
+                      <span>Audio Storytelling</span>
+                    </div>
+                    <h2>Smoothie Foley Project</h2>
+                    <p>
+                      This Foley project focuses on creating the sensory experience of making a smoothie
+                      through carefully crafted sound. From preparation to blending and pouring, the audio
+                      was designed to feel fresh, vivid, and satisfying.
+                    </p>
+
+                    <div class="info-boxes">
+                      <div class="info-box">Focus: sound texture and realism</div>
+                      <div class="info-box">Style: creative audio storytelling</div>
+                      <div class="info-box">Role: sound creation and audio direction</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="section-note">
+              <h3>Video Collection</h3>
+              <p>
+                This page brings all of my video work into one place so visitors can quickly explore
+                my storytelling, interview, and sound-based projects.
+              </p>
+            </div>
+
+            <div class="button-row">
+              <a href="../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+              <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        © 2026 Yumna El Hendi. Videography project collection.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
