@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Trends Go Viral | Yumna El Hendi</title>
+    <link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="../index.html" class="logo">Yumna El Hendi</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects" class="active">Projects</a></li>
+          <li><a href="../index.html#experience">Background</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-page infographic-page">
+      <div class="container">
+        <div class="page-card">
+          <div class="page-top">
+            <div class="eyebrow">Infographic Design • Visual Communication • Research</div>
+            <h1>How Trends Go Viral</h1>
+            <h2>Infographic exploring how online trends spread and gain momentum</h2>
+          </div>
+
+          <div class="page-body">
+            <div class="meta-row">
+              <span class="meta-pill">Infographic</span>
+              <span class="meta-pill">Graphic Design</span>
+              <span class="meta-pill">Research</span>
+              <span class="meta-pill">Visual Hierarchy</span>
+            </div>
+
+            <div class="main-grid">
+              <div class="card">
+                <h3>Project Objective</h3>
+                <p>
+                  This project explores how trends spread across digital platforms and why
+                  certain ideas gain rapid attention. The goal was to translate a broad topic
+                  into a visual format that is clear, engaging, and easy to follow.
+                </p>
+                <p>
+                  I focused on organizing information in a way that feels dynamic but still
+                  readable, using hierarchy, pacing, and strong visual structure to guide the viewer.
+                </p>
+
+                <ul class="feature-list">
+                  <li>Transforms research into a visually engaging format</li>
+                  <li>Uses clear hierarchy to guide the reader through the topic</li>
+                  <li>Balances data, design, and storytelling in one layout</li>
+                </ul>
+              </div>
+
+              <div class="image-card">
+                <img src="../images/viral-trends.jpg" alt="How Trends Go Viral infographic" class="zoomable">
+                <p class="image-caption">
+                  Final infographic design showing how trends move through attention, sharing, and audience behavior.
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom-grid">
+              <div class="card">
+                <h3>Design Approach</h3>
+                <p>
+                  I approached the infographic by breaking the topic into smaller, digestible
+                  sections and arranging them in a logical visual flow. Typography, spacing,
+                  and color contrast were used to keep the layout energetic without becoming overwhelming.
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>What I Focused On</h3>
+                <p>
+                  My main focus was clarity and engagement. I wanted the infographic to feel informative
+                  while still visually exciting, making the content easier to understand and more memorable.
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <h3>Outcome</h3>
+              <p>
+                This project strengthened my ability to turn research-heavy content into visual storytelling.
+                It reflects my interest in creating design work that communicates clearly while still feeling polished,
+                current, and audience-focused.
+              </p>
+            </div>
+
+            <div class="button-row">
+              <a href="../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+              <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        © 2026 Yumna El Hendi. How Trends Go Viral project page.
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+      <img id="lightboxImg" src="" alt="Large preview" />
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const zoomableImages = document.querySelectorAll('.zoomable');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    zoomableImages.forEach((img) => {
+      img.addEventListener('click', () => openLightbox(img.src));
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
