@@ -371,52 +371,26 @@
     const lightboxInner = document.getElementById("lightboxInner");
     const projectImages = document.querySelectorAll(".project-image");
 
-    let closeTimer = null;
-
     function openLightbox(src) {
       if (!src) return;
-      clearTimeout(closeTimer);
       lightboxImg.src = src;
       lightbox.classList.add("active");
       lightbox.setAttribute("aria-hidden", "false");
     }
 
     function closeLightbox() {
-      clearTimeout(closeTimer);
       lightbox.classList.remove("active");
       lightbox.setAttribute("aria-hidden", "true");
       lightboxImg.src = "";
     }
 
-    function scheduleClose() {
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => {
-        closeLightbox();
-      }, 180);
-    }
-
-    function cancelClose() {
-      clearTimeout(closeTimer);
-    }
-
     projectImages.forEach((img) => {
-      img.addEventListener("mouseenter", () => {
-        openLightbox(img.getAttribute("src"));
-      });
-
-      img.addEventListener("mouseleave", () => {
-        scheduleClose();
-      });
-
+      // Keep hover predictable: no full-screen preview on mouseover.
+      // The lightbox opens only when the visitor intentionally clicks an image.
       img.addEventListener("click", () => {
         openLightbox(img.getAttribute("src"));
       });
     });
-
-    lightbox.addEventListener("mouseenter", cancelClose);
-    lightboxInner.addEventListener("mouseenter", cancelClose);
-    lightbox.addEventListener("mouseleave", scheduleClose);
-    lightboxInner.addEventListener("mouseleave", scheduleClose);
 
     lightboxClose.addEventListener("click", closeLightbox);
 
