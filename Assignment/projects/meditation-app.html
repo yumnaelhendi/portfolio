@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Side by Side App | Yumna El Hendi</title>
+     <link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="../index.html" class="logo">Yumna El Hendi</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects" class="active">Projects</a></li>
+          <li><a href="../index.html#experience">Background</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-page meditation-page">
+      <div class="container">
+        <div class="page-card">
+          <div class="page-top">
+            <div class="eyebrow">UX/UI Design • App Experience • Wellness</div>
+            <h1>Side by Side App</h1>
+            <h2>Meditation and stress-management experience</h2>
+          </div>
+
+          <div class="page-body">
+            <div class="meta-row">
+              <span class="meta-pill">UX/UI</span>
+              <span class="meta-pill">Figma</span>
+              <span class="meta-pill">Research</span>
+              <span class="meta-pill">Mobile Design</span>
+            </div>
+
+            <div class="main-grid">
+              <div class="card">
+                <h3>Project Objective</h3>
+                <p>
+                  I led a team in designing the “Meditate” section of the Side by Side app.
+                  The goal was to create a supportive, user-friendly space that helps users
+                  manage stress through assessments, coping strategies, and guided exercises.
+                </p>
+                <p>
+                  This part of the app was designed to feel calm, clear, and approachable while
+                  helping users navigate emotional stress through mindful practice and structured support.
+                </p>
+
+                <ul class="feature-list">
+                  <li>Focused on stress relief and mindful guidance</li>
+                  <li>Designed for clear navigation and gentle user flow</li>
+                  <li>Balanced supportive content with visual calm</li>
+                </ul>
+              </div>
+
+              <div class="image-card">
+                <img src="../images/meditation-app.jpg" alt="Side by Side meditation app screen" class="zoomable">
+                <p class="image-caption">
+                  Main interface screen for the Meditate section, including guided actions and assessment tools.
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom-grid">
+              <div class="card">
+                <h3>Design Approach</h3>
+                <p>
+                  I focused on a soft visual language and a simple structure to create calm while
+                  guiding the experience without feeling overwhelming. Clear hierarchy, nurturing copy,
+                  and accessible navigation were key decisions in the interface.
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>What I Contributed</h3>
+                <p>
+                  I worked on the concept direction, screen design, and the structure of the meditation section.
+                  The work centered on creating an experience that feels emotionally supportive while still practical and usable.
+                </p>
+              </div>
+            </div>
+
+            <div class="prototype-box">
+              <h3>Prototype</h3>
+              <p>
+                This prototype link was embedded in your PDF portfolio. Open it to view the interactive design flow.
+              </p>
+              <a href="https://www.figma.com/design/Tiq53wPykztYafv6pRm10o/Side-by-Side-Meditate-by-Yumna?node-id=1613-11373&p=f&t=jflDpzyNGK6m4tv3-0" target="_blank" class="btn btn-secondary">View Prototype</a>
+            </div>
+
+            <div class="button-row">
+              <a href="../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+              <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        © 2026 Yumna El Hendi. Side by Side App case study.
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+      <img id="lightboxImg" src="" alt="Large preview" />
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const zoomableImages = document.querySelectorAll('.zoomable');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    zoomableImages.forEach((img) => {
+      img.addEventListener('click', () => openLightbox(img.src));
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

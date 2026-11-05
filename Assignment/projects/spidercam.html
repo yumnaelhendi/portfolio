@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spidercam | Yumna El Hendi</title>
+  <link rel="stylesheet" href="../styles.css">
+    
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="../index.html" class="logo">Yumna El Hendi</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects" class="active">Projects</a></li>
+          <li><a href="../index.html#experience">Background</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-page spider-page">
+      <div class="container">
+        <div class="page-card">
+          <div class="page-top">
+            <div class="eyebrow">Graphic Design • Vector Illustration • Technical Visualization</div>
+            <h1>Spidercam</h1>
+            <h2>Technical vector illustrations of two Spidercam system views</h2>
+          </div>
+
+          <div class="page-body">
+            <div class="meta-row">
+              <span class="meta-pill">Vector Design</span>
+              <span class="meta-pill">Illustration</span>
+              <span class="meta-pill">Technical Visual</span>
+              <span class="meta-pill">Graphic Design</span>
+            </div>
+
+            <div class="main-grid">
+              <div class="card">
+                <h3>Project Overview</h3>
+                <p>
+                  This project focused on translating the Spidercam system into clean, detailed vector illustrations.
+                  The goal was to simplify a technical subject into visuals that are polished, readable, and accurate.
+                </p>
+                <p>
+                  I created two distinct views to better communicate the structure and design of the system from
+                  different angles, allowing the product to be understood more clearly in a visual format.
+                </p>
+
+                <ul class="feature-list">
+                  <li>Built from real product reference imagery</li>
+                  <li>Focused on precision, clarity, and clean vector form</li>
+                  <li>Presented multiple views to improve understanding</li>
+                </ul>
+              </div>
+
+              <div class="image-grid">
+                <div class="image-card">
+                  <img src="../images/Field Dolly_Angled Side.990 230628.png" alt="Spidercam Field Dolly angled side view" class="zoomable">
+                  <h4>Field Dolly — Angled Side View</h4>
+                  <p class="image-caption">
+                    Angled side perspective showing the wider structure, mounted camera setup, and upper support system.
+                  </p>
+                </div>
+
+                <div class="image-card">
+                  <img src="../images/Spidercam - x dolly 230628.png" alt="Spidercam X Dolly front view" class="zoomable">
+                  <h4>Spidercam X Dolly — Front View</h4>
+                  <p class="image-caption">
+                    Front-facing view highlighting the vertical frame construction and central mechanical setup.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom-grid">
+              <div class="card">
+                <h3>Design Focus</h3>
+                <p>
+                  My focus was on creating a visually clean technical illustration while preserving important structural details.
+                  I paid close attention to silhouette, proportion, and shape clarity so the design would remain readable even with complex parts.
+                </p>
+              </div>
+
+              <div class="card">
+                <h3>What This Project Shows</h3>
+                <p>
+                  This project demonstrates my ability to transform product references into organized vector artwork.
+                  It highlights attention to detail, control of shape and spacing, and the ability to present technical objects in a professional visual style.
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <h3>Outcome</h3>
+              <p>
+                These two Spidercam illustrations helped me strengthen my vector illustration skills and my ability to communicate product form clearly.
+                Showing both the angled side view and front view gives the project more depth and makes the final presentation stronger.
+              </p>
+            </div>
+
+            <div class="button-row">
+              <a href="../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+              <a href="../index.html#contact" class="btn btn-primary">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        © 2026 Yumna El Hendi. Spidercam project page.
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+      <img id="lightboxImg" src="" alt="Large preview" />
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const zoomableImages = document.querySelectorAll('.zoomable');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    zoomableImages.forEach((img) => {
+      img.addEventListener('click', () => openLightbox(img.src));
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

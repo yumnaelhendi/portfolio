@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthy in 30 Minutes | Yumna El Hendi</title>
+  <meta name="description" content="Healthy in 30 Minutes — cookbook and interactive recipe app project by Yumna El Hendi." />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    .cook-page .hero-body { padding:34px; }
+    .cook-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start; }
+    .cook-card {
+      background:rgba(255,255,255,.98);
+      border:1px solid var(--border);
+      border-radius:var(--radius-md);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .cook-card h2,.cook-card h3 { color:var(--primary-dark); margin-bottom:12px; }
+    .cook-card p,.cook-card li { color:var(--muted); }
+    .cook-image { width:100%; border-radius:16px; display:block; background:#fff; }
+    .cook-section { margin-top:34px; }
+    .cook-section > h2 { color:var(--primary-dark); font-size:1.7rem; margin-bottom:10px; }
+    .cook-section > p { color:var(--muted); max-width:900px; margin-bottom:18px; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+    .tag-row span {
+      background:var(--primary-soft); color:var(--primary-dark);
+      border-radius:999px; padding:8px 12px; font-size:.8rem; font-weight:700;
+    }
+    .outcome {
+      margin-top:30px; padding:26px; border-radius:var(--radius-md);
+      background:linear-gradient(135deg,#735fd1,#9785df); color:#fff; box-shadow:var(--shadow);
+    }
+    .outcome h2,.outcome p { color:#fff; }
+    @media(max-width:900px){ .cook-grid{grid-template-columns:1fr;} }
+    @media(max-width:700px){ .cook-page .hero-body{padding:20px;} }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="../index.html#home" class="logo">Yumna El Hendi</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="project-hero cook-page">
+  <div class="container">
+    <article class="hero-card">
+      <div class="hero-top">
+        <span class="eyebrow">Editorial Design • UX/UI • Content Organization</span>
+        <h1>Healthy in 30 Minutes</h1>
+        <h2>Easy recipes for busy days.</h2>
+      </div>
+
+      <div class="hero-body">
+        <div class="cook-grid">
+          <section class="cook-card">
+            <h2>Project Brief</h2>
+            <p>
+              Healthy in 30 Minutes is a cookbook and interactive recipe experience created for
+              people who want homemade meals without spending hours in the kitchen.
+            </p>
+            <p>
+              The project combines editorial design with digital UX/UI. The print cookbook organizes
+              recipes, nutrition facts, ingredients and directions into a consistent visual system,
+              while the interactive prototype adapts the same idea into a faster, mobile-friendly way
+              to search, save and follow recipes.
+            </p>
+            <div class="tag-row">
+              <span>Editorial Design</span>
+              <span>UX/UI</span>
+              <span>Information Design</span>
+              <span>Figma</span>
+              <span>InDesign</span>
+            </div>
+          </section>
+
+          <section class="cook-card">
+            <img src="../images/cookbook-cover.jpg" alt="Healthy in 30 Minutes cookbook cover" class="cook-image" />
+          </section>
+        </div>
+
+        <section class="cook-section">
+          <h2>The Editorial System</h2>
+          <p>
+            The cookbook was designed around clarity and repeatability. Each recipe follows a
+            consistent structure for prep time, cook time, total time, servings, nutrition facts,
+            ingredients, directions and food photography so readers can scan information quickly.
+          </p>
+
+          <div class="cook-grid">
+            <div class="cook-card">
+              <h3>Content Strategy</h3>
+              <p>
+                The book focuses on recipes that can be prepared in about 30 minutes or less,
+                use simple ingredients, support balanced nutrition and work well for busy weekdays
+                and family meals.
+              </p>
+            </div>
+
+            <div class="cook-card">
+              <h3>Visual Direction</h3>
+              <p>
+                Warm cream backgrounds, muted green accents, food photography and illustrated
+                kitchen details create a friendly, approachable visual identity while maintaining
+                clear hierarchy across a multi-page publication.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cook-section">
+          <h2>From Cookbook to Interactive Prototype</h2>
+          <p>
+            The digital version extends the same content into an interactive recipe experience.
+            The prototype was designed around quick access to recipes and clearer step-by-step use
+            while cooking.
+          </p>
+
+          <div class="cook-grid">
+            <div class="cook-card">
+              <img src="../images/cookbook-overview.jpg" alt="Healthy in 30 Minutes about page and table of contents" class="cook-image" />
+            </div>
+
+            <div class="cook-card">
+              <h3>Interactive Features</h3>
+              <p>
+                The Figma prototype includes a splash screen, recipe search, favourites, recipe cards,
+                ingredient checkboxes, collapsible content, step-by-step directions and fixed navigation.
+              </p>
+              <p>
+                This allows the project to demonstrate both long-form editorial organization and
+                interface thinking within the same visual concept.
+              </p>
+              <div class="button-row">
+                <a href="https://www.figma.com/proto/klLFYanMtfj1etiIZtRHtX/Healthy-in-30-min?node-id=3-4&starting-point-node-id=3%3A4&t=o0dcIiCaz0EuiaWg-1" target="_blank" rel="noopener" class="btn btn-primary">Open Figma Prototype</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cook-section">
+          <h2>Publication Scope</h2>
+          <div class="cook-card">
+            <p>
+              The cookbook includes eleven recipes, an introduction, healthy-eating tips, an author page
+              and references. Recipe layouts include examples such as Crispy Rice Sushi Bites,
+              Salmon Rice Bowl, Shrimp Stir-Fry, Lemon Garlic Chicken, Sheet Pan Chicken Fajitas,
+              Beef & Broccoli and several salad and bowl recipes.
+            </p>
+          </div>
+        </section>
+
+        <div class="outcome">
+          <h2>Outcome</h2>
+          <p>
+            Healthy in 30 Minutes became a cross-platform design project that connects editorial layout
+            and interactive UX/UI. The finished work demonstrates information hierarchy, consistent
+            multi-page design, content organization and the ability to translate one visual system from
+            print into a functional digital prototype.
+          </p>
+        </div>
+
+        <div class="button-row" style="margin-top:24px;">
+          <a href="https://www.figma.com/proto/klLFYanMtfj1etiIZtRHtX/Healthy-in-30-min?node-id=3-4&starting-point-node-id=3%3A4&t=o0dcIiCaz0EuiaWg-1" target="_blank" rel="noopener" class="btn btn-primary">View Interactive Prototype</a>
+          <a href="../files/Healthy-in-30-Minutes-Cookbook.pdf" target="_blank" class="btn btn-secondary">View Full Cookbook PDF</a>
+          <a href="../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+</body>
+</html>

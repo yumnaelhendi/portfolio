@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typography Specimen Book | Yumna El Hendi</title>
+  <meta name="description" content="Typography specimen book case study by Yumna El Hendi — research, editorial design, type systems, layout development and publication design." />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    .type-page .hero-body { padding: 34px; }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .type-card {
+      background: rgba(255,255,255,.98);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .type-card h2,
+    .type-card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+
+    .type-card p,
+    .type-card li {
+      color: var(--muted);
+    }
+
+    .type-image {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .type-section {
+      margin-top: 34px;
+    }
+
+    .type-section > h2 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      font-size: 1.7rem;
+    }
+
+    .type-section > p {
+      max-width: 900px;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag-row span {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .type-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .type-gallery figure {
+      margin: 0;
+      padding: 12px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg,#f5f1ff,#efeafd);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .type-gallery figcaption {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: .9rem;
+    }
+
+    .outcome {
+      margin-top: 30px;
+      padding: 26px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg,#735fd1,#9785df);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .outcome h2,
+    .outcome p {
+      color: #fff;
+    }
+
+    @media (max-width: 950px) {
+      .type-grid,
+      .type-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .type-page .hero-body { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="../index.html#home" class="logo">Yumna El Hendi</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="project-hero type-page">
+  <div class="container">
+    <article class="hero-card">
+
+      <div class="hero-top">
+        <span class="eyebrow">Typography • Editorial Design • Research • Publication Design</span>
+        <h1>Typography Specimen Book</h1>
+        <h2>Exploring the anatomy, history and application of type.</h2>
+      </div>
+
+      <div class="hero-body">
+
+        <div class="type-grid">
+          <section class="type-card">
+            <h2>Project Brief</h2>
+            <p>
+              This project was created as a professional typography specimen book exploring
+              influential typefaces, their designers, history, anatomy and real-world applications.
+            </p>
+            <p>
+              The goal was to show how typography communicates meaning through structure,
+              hierarchy and visual design while applying editorial layout principles across
+              a cohesive publication.
+            </p>
+
+            <div class="tag-row">
+              <span>Typography</span>
+              <span>Editorial Design</span>
+              <span>Research</span>
+              <span>Grid Systems</span>
+              <span>Hierarchy</span>
+              <span>Publication Design</span>
+            </div>
+          </section>
+
+          <section class="type-card">
+            <img src="../images/typography-cover.jpg" alt="Typography Specimen Book cover" class="type-image" />
+          </section>
+        </div>
+
+        <section class="type-section">
+          <h2>Research & Visual Direction</h2>
+          <p>
+            Research formed the foundation of the project. For each typeface, I explored the designer,
+            historical context, classification, anatomy, character set, weights and applications before
+            developing the final spreads.
+          </p>
+
+          <div class="type-grid">
+            <div class="type-card">
+              <h3>Visual Language</h3>
+              <p>
+                The editorial style combines minimal layouts with expressive typography.
+                Oversized letterforms, strong hierarchy and balanced compositions create pages
+                that are informative while still visually engaging.
+              </p>
+            </div>
+
+            <div class="type-card">
+              <h3>Colour & Structure</h3>
+              <p>
+                Warm neutrals are contrasted with muted blue and burgundy accents. An editorial grid,
+                consistent margins and paragraph styles maintain alignment and consistency throughout
+                the publication.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="type-section">
+          <h2>Type Trials & Layout Development</h2>
+          <p>
+            Before finalizing the typefaces, I tested serif and sans-serif families for readability,
+            personality and hierarchy. Different weights, sizes and spacing were compared to understand
+            how each typeface behaved in editorial layouts.
+          </p>
+
+          <div class="type-card">
+            <img src="../images/typography-toc.jpg" alt="Typography specimen book table of contents spread" class="type-image" />
+          </div>
+        </section>
+
+        <section class="type-section">
+          <h2>Featured Typefaces</h2>
+          <p>
+            The final book focuses on three influential typefaces with very different personalities:
+            Avenir, Baskerville and Bodoni.
+          </p>
+
+          <div class="type-gallery">
+            <figure>
+              <img src="../images/typography-avenir.jpg" alt="Avenir typography spread" class="type-image" />
+              <figcaption><strong>Avenir.</strong> A humanist sans serif selected for clarity, versatility and a warm, modern character.</figcaption>
+            </figure>
+
+            <figure>
+              <img src="../images/typography-baskerville.jpg" alt="Baskerville typography spread" class="type-image" />
+              <figcaption><strong>Baskerville.</strong> A transitional serif combining elegance, strong readability and refined proportions.</figcaption>
+            </figure>
+
+            <figure>
+              <img src="../images/typography-bodoni.jpg" alt="Bodoni typography spread" class="type-image" />
+              <figcaption><strong>Bodoni.</strong> A modern Didone serif defined by dramatic contrast, geometric precision and a sophisticated editorial presence.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="type-section">
+          <h2>Design Process</h2>
+          <div class="type-grid">
+            <div class="type-card">
+              <h3>Cover Development</h3>
+              <p>
+                The cover evolved through several concepts before the final direction was chosen.
+                Layered letterforms, expressive typography and a limited palette were refined to reflect
+                the visual language used inside the book.
+              </p>
+            </div>
+
+            <div class="type-card">
+              <h3>Editorial Consistency</h3>
+              <p>
+                Oversized background letterforms became a recurring design device. Combined with layered
+                typography, colour and imagery, they helped create bold compositions while maintaining
+                hierarchy and readability across the spreads.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="type-section">
+          <h2>Final Production</h2>
+          <div class="type-card">
+            <p>
+              The completed specimen book brings together research, typography, layout and visual storytelling
+              into a cohesive editorial publication. Each spread was designed to balance readability with visual
+              impact while maintaining consistency through colour, hierarchy and spacing.
+            </p>
+          </div>
+        </section>
+
+        <div class="outcome">
+          <h2>Outcome</h2>
+          <p>
+            This project strengthened my understanding of typography as a communication system rather than
+            simply a font choice. It demonstrates research, type classification, editorial hierarchy, grid-based
+            layout and publication design, while showing how three distinct typefaces can be presented within
+            one consistent visual identity.
+          </p>
+        </div>
+
+        <div class="button-row" style="margin-top:24px;">
+          <a href="../files/Typography-Specimen-Book.pdf" target="_blank" class="btn btn-primary">View Full Specimen Book</a>
+          <a href="../files/Typography-Specimen-Process.pdf" target="_blank" class="btn btn-secondary">View Process Presentation</a>
+          <a href="../index.html#projects" class="btn btn-secondary">← Back to Projects</a>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</main>
+</body>
+</html>
